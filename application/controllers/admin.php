@@ -49,7 +49,7 @@ class admin extends CI_Controller {
             . "(SELECT COUNT(*) FROM sessions s WHERE s.organizer_id=o.organizer_id) AS event_amount "
             . "FROM organizers AS o "
             . "WHERE o.organizer_id=$id";
-        $sql_query = $this->db->query($sql_string)->row();
+        $sql_query = $this->db->query($sql_string);
         $data["query_listing"] = $sql_query;
 
         $this->load->view('admin_header', $data);
@@ -58,4 +58,55 @@ class admin extends CI_Controller {
         $this->load->view('admin_footer', $data);
     }
 
+    public function user(){
+      $this->load->database();
+      $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+      $results_per_page = 10;
+      $link = 7;
+      $start_from = ($page-1) * $results_per_page;
+
+      $sql_string = "SELECT u.* "
+          . "FROM users AS u "
+          . "ORDER BY u.user_id DESC "
+          . "LIMIT $start_from, $results_per_page";
+      $sql_query = $this->db->query($sql_string);
+
+      $result = $this->db->query("SELECT COUNT(user_id) AS total FROM users;");
+      $row = $result->row();
+
+      $data["total_pages"] = ceil($row->total / $results_per_page);
+      $data["current_page"] = $page;
+      $data["query_listing"] = $sql_query;
+
+      $this->load->view('admin_header', $data);
+      $this->load->view('admin_nav', $data);
+      $this->load->view('admin_user', $data);
+      $this->load->view('admin_footer', $data);
+    }
+
+    public function sport(){
+      $this->load->database();
+      $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+      $results_per_page = 10;
+      $link = 7;
+      $start_from = ($page-1) * $results_per_page;
+
+      $sql_string = "SELECT s.* "
+          . "FROM sessions AS s "
+          . "ORDER BY s.session_id DESC "
+          . "LIMIT $start_from, $results_per_page";
+      $sql_query = $this->db->query($sql_string);
+
+      $result = $this->db->query("SELECT COUNT(session_id) AS total FROM sessions;");
+      $row = $result->row();
+
+      $data["total_pages"] = ceil($row->total / $results_per_page);
+      $data["current_page"] = $page;
+      $data["query_listing"] = $sql_query;
+
+      $this->load->view('admin_header', $data);
+      $this->load->view('admin_nav', $data);
+      $this->load->view('admin_session', $data);
+      $this->load->view('admin_footer', $data);
+    }
 }
