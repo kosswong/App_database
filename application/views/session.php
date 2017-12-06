@@ -143,71 +143,30 @@
                     </div>
                 </div>
                 <div class="header">
-                    <h4 class="title">Relate activity</h4>
+                    <h4 class="title">Relate sport session</h4>
                 </div>
                 <div class="card">
                     <div class="content">
                         <ul class="list-unstyled team-members">
+                            <?php
+                            foreach ($relate->result() as $row) {
+                                echo '
                             <li>
                                 <div class="row">
-                                    <div class="col-xs-3">
-                                        <div class="avatar">
-                                            <img src="http://localhost/database/img/faces/face-0.jpg" alt="Circle Image"
-                                                 class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        DJ Khaled
+                                    <div class="col-xs-8">
+                                        '.$row->title.'
                                         <br/>
-                                        <span class="text-muted"><small>Offline</small></span>
+                                        <span class="text-primary"><small>'.$row->short_description.'</small></span>
                                     </div>
 
-                                    <div class="col-xs-3 text-right">
-                                        <btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i>
-                                        </btn>
+                                    <div class="col-xs-4 text-right">
+                                        <a href="./session?id='.$row->session_id.'" class="btn btn-success btn-icon btn-fill" role="button">Learn More</a>
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <div class="avatar">
-                                            <img src="http://localhost/database/img/faces/face-1.jpg" alt="Circle Image"
-                                                 class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        Creative Tim
-                                        <br/>
-                                        <span class="text-success"><small>Available</small></span>
-                                    </div>
-
-                                    <div class="col-xs-3 text-right">
-                                        <btn class="btn btn-sm btn-success btn-icon">View
-                                        </btn>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <div class="avatar">
-                                            <img src="http://localhost/database/img/faces/face-3.jpg" alt="Circle Image"
-                                                 class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        Flume
-                                        <br/>
-                                        <span class="text-danger"><small>Busy</small></span>
-                                    </div>
-
-                                    <div class="col-xs-3 text-right">
-                                        <btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i>
-                                        </btn>
-                                    </div>
-                                </div>
-                            </li>
+';
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>

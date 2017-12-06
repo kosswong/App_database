@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class session extends CI_Controller {
+class session extends CI_Controller
+{
     public function index()
     {
         $this->load->database();
@@ -11,8 +12,10 @@ class session extends CI_Controller {
         $sql_query = $this->db->query($sql_string)->row();
         $data["row"] = $sql_query;
 
-        $sql_string = "SELECT * FROM relations WHERE session_id=$id";
-        $sql_query = $this->db->query($sql_string)->row();
+        $sql_string = "SELECT * FROM relations r JOIN sessions s ON s.session_id = r.session_id WHERE r.related_id=1
+UNION
+SELECT * FROM relations r JOIN sessions s ON s.session_id = r.related_id WHERE r.session_id=1;";
+        $sql_query = $this->db->query($sql_string);
         $data["relate"] = $sql_query;
 
         $this->load->view('header', $data);
