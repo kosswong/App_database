@@ -26,11 +26,9 @@
                     <?php
                     for ($i=1; $i<=$total_pages; $i++) {
                         echo "<li";
-
-                        if($current_page == $i){
+                        if($current_page == $i)
                             echo ' class="active"';
-                        }
-                        echo "><a href='./user?page=".$i."'>".$i."</a></li>";
+                        echo "><a href='./booking?page=".$i."'>".$i."</a></li>";
                     };
                     ?>
                         <li><a href="#">&raquo;</a></li>
@@ -39,9 +37,10 @@
                         <table class="table table-striped">
                             <thead>
                             <th>ID</th>
-                            <th>User</th>
+                            <th>Booker</th>
                             <th>Session</th>
-                            <th>Ticket Amount</th>
+                            <th>Email</th>
+                            <th>Phone</th>
                             <th></th>
                             </thead>
                             <tbody>
@@ -49,13 +48,13 @@
                             foreach ($query_listing->result() as $row) {
                                 echo '<tr>
                                 <td>'.$row->booking_id.'</td>
-                                <td>'.$row->user_id.'</td>
+                                <td>'.$row->user_first_name.', '.$row->user_last_name.'</td>
                                 <td>'.$row->session_id.'</td>
-                                <td>'.$row->ticket_amount.'</td>
+                                <td>'.$row->user_email.'</td>
+                                <td>'.$row->user_phone.'</td>
                                 <td>
-                                <a href="./organizer_edit?id='.$row->booking_id.'" class="btn btn-info btn-sm" role="button">Edit</a>
-                                    <button class="btn btn-primary btn-sm">Event list</button>
-                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                <a href="./booking_edit?id='.$row->booking_id.'" class="btn btn-info btn-sm" role="button">Edit</a>
+                                <a href="./booking_delete?id='.$row->booking_id.'" class="btn btn-danger btn-sm" role="button">Delete</a>
                                 </td>
                             </tr>';
                             }

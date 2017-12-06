@@ -45,6 +45,7 @@
                             </div>
                             <hr/>
                         <form action="./booking/submit_booking" method="post">
+                            <input type="hidden" value="<?php echo $row->session_id; ?>" name="session_id" />
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
