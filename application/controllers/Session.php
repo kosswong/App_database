@@ -7,9 +7,13 @@ class session extends CI_Controller {
         $this->load->database();
         $id = isset($_GET["id"]) ? $_GET["id"] : 1;
 
-        $sql_string = "SELECT * FROM sessions WHERE session_id=$id";
+        $sql_string = "SELECT * FROM sessions NATURAL JOIN trainers NATURAL JOIN venues NATURAL JOIN organizers NATURAL JOIN session_levels WHERE session_id=$id";
         $sql_query = $this->db->query($sql_string)->row();
         $data["row"] = $sql_query;
+
+        $sql_string = "SELECT * FROM relations WHERE session_id=$id";
+        $sql_query = $this->db->query($sql_string)->row();
+        $data["relate"] = $sql_query;
 
         $this->load->view('header', $data);
         $this->load->view('navigation', $data);

@@ -15,54 +15,83 @@
                         <img src="<?php echo $row->photo_url; ?>"/>
                     </div>
                     <div class="content">
+                        <div class="row">
+                            <div class="col-md-3">Programme Number:</div>
+                            <div class="col-md-9"><?php echo $row->session_id; ?></div>
+                            <div class="col-md-3">Title:</div>
+                            <div class="col-md-9"><?php echo $row->title; ?></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Venue Name:</div>
+                            <div class="col-md-9"><?php echo $row->venue_name; ?></div>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-9"><?php echo $row->venue_address; ?></div>
+                            <div class="col-md-3">Format:</div>
+                            <div class="col-md-9"><a href="./search?format=<?php echo $row->format; ?>"><?php echo $row->format; ?></a></div>
+                            <div class="col-md-3">Level:</div>
+                            <div class="col-md-9"><a href="./search?level_name=<?php echo $row->level_id; ?>"><?php echo $row->level_name; ?></a></div>
+                            <div class="col-md-3">Date: </div>
+                            <div class="col-md-9"><?php echo $row->datetime_from; ?> - <?php echo $row->datetime_to; ?></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Organizer: </div>
+                            <div class="col-md-9"><a href="./search?organizer=<?php echo $row->organizer_id; ?>"><?php echo $row->organizer_name; ?></a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Introduction: </div>
+                            <div class="col-md-9"><?php echo $row->long_description; ?>
+                                , <?php echo $row->short_description; ?></div>
+                        </div>
+                        <hr/>
+                        <div class="text-center">
                             <div class="row">
-                                <div class="col-md-5">Programme Number: <?php echo $row->session_id; ?></div>
-                                <div class="col-md-7">Activity Name: <?php echo $row->title; ?></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">Introduction: <?php echo $row->long_description; ?>
-                                    , <?php echo $row->short_description; ?></div>
-                            </div>
-                            <hr/>
-                            <div class="text-center">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h5><a href="./search?trainer=Trainer">Tip Man</a><br/>
-                                            <small>Trainer</small>
-                                        </h5>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h5>30 / 30<br/>
-                                            <small>Quota Left</small>
-                                        </h5>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h5>Free<br/>
-                                            <small>Fee</small>
-                                        </h5>
-                                    </div>
+                                <div class="col-md-3">
+                                    <h5><a href="./search?district=<?php echo $row->district; ?>"><?php echo $row->district; ?></a><br/>
+                                        <small>District</small>
+                                    </h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>
+                                        <a href="./search?trainer=<?php echo $row->trainer_id; ?>"><?php echo $row->trainer_name; ?></a><br/>
+                                        <small>Trainer's name</small>
+                                    </h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5><?php echo $row->tickets; ?><br/>
+                                        <small>Quota Left</small>
+                                    </h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5><?php echo ($row->price ? "$$row->price" : "Free"); ?><br/>
+                                        <small>Fee</small>
+                                    </h5>
                                 </div>
                             </div>
-                            <hr/>
+                        </div>
+                        <hr/>
+                        <?php if($row->tickets){ ?>
                         <form action="./booking/submit_booking" method="post">
-                            <input type="hidden" value="<?php echo $row->session_id; ?>" name="session_id" />
+                            <input type="hidden" value="<?php echo $row->session_id; ?>" name="session_id"/>
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input type="text" name="first_name" class="form-control border-input" placeholder="First Name">
+                                        <input type="text" name="first_name" class="form-control border-input"
+                                               placeholder="First Name">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input type="text" name="last_name" class="form-control border-input" placeholder="Last Name">
+                                        <input type="text" name="last_name" class="form-control border-input"
+                                               placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" name="email" class="form-control border-input" placeholder="Email">
+                                        <input type="email" name="email" class="form-control border-input"
+                                               placeholder="Email">
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +100,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="number" name="phone" class="form-control border-input" placeholder="Phone number">
+                                        <input type="number" name="phone" class="form-control border-input"
+                                               placeholder="Phone number">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -86,11 +116,15 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-info btn-fill btn-wd">Do Booking</button>
+                                <button type="submit" class="btn btn-info btn-fill btn-wd">Book</button>
                             </div>
                             <div class="clearfix"></div>
                         </form>
-
+                        <?php }else{ ?>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info btn-fill btn-wd" disabled>Full</button>
+                            </div>
+                        <?php } ?>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -103,7 +137,9 @@
 
                 <div class="card" style="padding: 0px;">
                     <div class="content" style="padding: 0px;">
-                        <iframe src="http://maps.google.com.tw/maps?f=q&amp;hl=zh-TW&amp;geocode=&amp;q=香港新界葵涌葵德街16-26號金德工業大廈2座1205&amp;z=16&amp;output=embed&amp;t=p" width="100%" height="450" frameborder="0" style="border:0;border-radius: 6px;" allowfullscreen=""></iframe>
+                        <iframe src="http://maps.google.com.tw/maps?f=q&amp;hl=zh-TW&amp;geocode=&amp;q=<?php echo $row->venue_address; ?>&amp;z=16&amp;output=embed&amp;t=p"
+                                width="100%" height="450" frameborder="0" style="border:0;border-radius: 6px;"
+                                allowfullscreen=""></iframe>
                     </div>
                 </div>
                 <div class="header">
