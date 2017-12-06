@@ -14,6 +14,64 @@
             <div class="header">
                 <h4 class="title">SEARCH FILTERS</h4>
             </div>
+
+            <div class="content">
+                <form action="./search" method="post">
+                    <input type="hidden" value="601" name="session_id">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>District</label>
+                                <input type="text" name="first_name" class="form-control border-input" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Activity Type</label>
+                                <input type="text" name="last_name" class="form-control border-input" placeholder="Type">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Level</label>
+                                <select class="form-control" name="level">
+                                    <option>All</option>
+                                    <option>Let Me Try</option>
+                                    <option>Beginner</option>
+                                    <option>Intermediate</option>
+                                    <option>Advanced</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="number" name="phone" class="form-control border-input" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="checkbox">
+                            <input id="checkbox2" type="checkbox" checked="">
+                            <label for="checkbox2">
+                                I agree with everything.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-info btn-fill btn-wd">Do Booking</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+
+                <div class="clearfix"></div>
+            </div>
+
             <form class="form-inline">
                 <div class="form-group">
                     <label for="exampleInputName2">地區session title, long description, trainer's names, organizer's
@@ -36,6 +94,8 @@
                 <button type="submit" class="btn btn-default">Send invitation</button>
             </form>
         </div>
+
+
 
         <ul class="pagination">
             <li><a href="#">&laquo;</a></li>

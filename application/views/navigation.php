@@ -16,10 +16,7 @@ $url = basename($_SERVER['PHP_SELF']);
             <a href="<?php echo $this->config->config['base_url']; ?>/index.php/search">Sport session</a>
         </li>
         <li<?php if($url == "user"){ echo ' class="active"'; }?>>
-            <a href="<?php echo $this->config->config['base_url']; ?>/index.php/user">User</a>
-        </li>
-        <li>
-            <a href="<?php echo $this->config->config['base_url']; ?>/index.php/admin">Admin</a>
+            <a href="<?php echo $this->config->config['base_url']; ?>/index.php/user">My Booking</a>
         </li>
     </ul>
 </div>

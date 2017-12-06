@@ -26,19 +26,19 @@
                             <hr/>
                             <div class="text-center">
                                 <div class="row">
-                                    <div class="col-md-3 col-md-offset-1">
-                                        <h5>Fee<br/>
-                                            <small>Free</small>
+                                    <div class="col-md-4">
+                                        <h5><a href="./search?trainer=Trainer">Tip Man</a><br/>
+                                            <small>Trainer</small>
                                         </h5>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5>Quota Left<br/>
-                                            <small>30 / 30</small>
+                                        <h5>30 / 30<br/>
+                                            <small>Quota Left</small>
                                         </h5>
                                     </div>
-                                    <div class="col-md-3">
-                                        <h5>24,6$<br/>
-                                            <small>Spent</small>
+                                    <div class="col-md-4">
+                                        <h5>Free<br/>
+                                            <small>Fee</small>
                                         </h5>
                                     </div>
                                 </div>
@@ -97,6 +97,15 @@
             </div>
 
             <div class="col-lg-4 col-md-5">
+                <div class="header">
+                    <h4 class="title">Location</h4>
+                </div>
+
+                <div class="card" style="padding: 0px;">
+                    <div class="content" style="padding: 0px;">
+                        <iframe src="http://maps.google.com.tw/maps?f=q&amp;hl=zh-TW&amp;geocode=&amp;q=香港新界葵涌葵德街16-26號金德工業大廈2座1205&amp;z=16&amp;output=embed&amp;t=p" width="100%" height="450" frameborder="0" style="border:0;border-radius: 6px;" allowfullscreen=""></iframe>
+                    </div>
+                </div>
                 <div class="header">
                     <h4 class="title">Relate activity</h4>
                 </div>

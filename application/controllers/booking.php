@@ -29,12 +29,16 @@ class booking extends CI_Controller
                 $data['message'] = "Sorry! You have already registered it, please give the chance other user. Thank you!";
                 $this->load->view('message', $data);
             } else {
+
                 $booking_code = substr(hash('sha512', rand()), 0, 12).($_POST['phone']);
                 $sql_string = "INSERT INTO bookings "
                     . "(booking_code, user_first_name, user_last_name, user_email, user_phone, session_id) "
                     . "VALUES ('$booking_code', '$first_name', '$last_name', '$email', '$phone', '$session_id')";
                 $result = $this->db->query($sql_string);
-                if($result){
+                $sql_string = "UPDATE sessions SET tickets=tickets-1 WHERE session_id= $session_id;";
+                $ticket_result = $this->db->query($sql_string);
+
+                if($result && $ticket_result){
                     $data['message'] = "You have registered it successfully!";
                     $data['important'] = 'Please be remind of your booking detail:<br><hr>';
                     $data['important'] .= 'Session ID: '.$session_id.'<br>';
