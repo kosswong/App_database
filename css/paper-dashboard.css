@@ -1065,7 +1065,7 @@ textarea.form-control {
   .checkbox input,
   .radio input {
     outline: none !important;
-    display: none; }
+    display: block; }
 
 .checkbox label,
 .radio label {

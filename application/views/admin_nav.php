@@ -1,7 +1,7 @@
 <?php
 $url = basename($_SERVER['PHP_SELF']);
 ?>
-<div class="sidebar" data-background-color="white" data-active-color="info"><!--primary | info | success | warning | danger-->
+<div class="sidebar" data-background-color="black" data-active-color="info"><!--primary | info | success | warning | danger-->
     <div class="sidebar-wrapper">
         <div class="logo"><a href="#" class="simple-text">X SPORT CITY</a></div>
         <ul class="nav">

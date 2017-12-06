@@ -7,21 +7,9 @@ class Welcome extends CI_Controller {
         $data["pageTitle"] = "Welcome";
         $data["pageHeading"] = "Featuring";
 
-        $this->load->database();
-
-        $sql_string = 'SELECT * FROM news_cat ORDER BY sorting';
-        //echo "<br /><b>SQL COMMAND:</b> " . $sql_string;
-        $sql_query = $this->db->query($sql_string);
-        $data["query_categories"] = $sql_query;
-
-        $sql_string = 'SELECT * FROM news WHERE featuring=1 ORDER BY id';
-        //echo "<br /><b>SQL COMMAND:</b> " . $sql_string;
-        $sql_query = $this->db->query($sql_string);
-        $data["query_featuring"] = $sql_query;
-
         $this->load->view('header', $data);
         $this->load->view('navigation', $data);
-        $this->load->view('news_featuring', $data);
+        $this->load->view('welcome', $data);
         $this->load->view('footer', $data);
     }
 

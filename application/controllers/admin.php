@@ -49,7 +49,7 @@ class admin extends CI_Controller {
             . "(SELECT COUNT(*) FROM sessions s WHERE s.organizer_id=o.organizer_id) AS event_amount "
             . "FROM organizers AS o "
             . "WHERE o.organizer_id=$id";
-        $sql_query = $this->db->query($sql_string);
+        $sql_query = $this->db->query($sql_string)->row();
         $data["query_listing"] = $sql_query;
 
         $this->load->view('admin_header', $data);

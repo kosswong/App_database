@@ -1,44 +1,25 @@
-<ul class="nav nav-tabs">
-    <?php
-    if (!isset($active_category))
-        echo '<li role="presentation" class="active">';
-    else
-        echo '<li role="presentation">';
-    ?>
-    <a href="<?php echo $this->config->config['base_url']; ?>/index.php/news/"><span
-                class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
-    </li>
-
-    <?php
-    foreach ($query_categories->result() as $row) {
-        if (isset($active_category) && $active_category == $row->id)
-            echo '<li role="presentation" class="active">';
-        else
-            echo '<li role="presentation">';
-        echo '<a href="'
-            . $this->config->config['base_url']
-            . "/index.php/news/listing/"
-            . $row->id
-            . '">'
-            . $row->category
-            . '</a>'
-            . "</li>";
-    }
-    ?>
-</ul>
-
+<?php
+$url = basename($_SERVER['PHP_SELF']);
+?>
+<div class="text-right">
+    <form action="<?php echo $this->config->config['base_url']; ?>/index.php/news/search" method="post" class="form-inline">
+        <input type="text" name="keyword" id="keyword" class="form-control"/>
+        <input type="submit" name="Search" id="Search" value="Search" class="btn btn-primary"/>
+    </form>
+</div>
 <div class="container">
     <ul class="nav nav-pills nav-justified">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Search</a></li>
-        <li><a href="#">My booking</a></li>
-        <li><a href="#">Login/Logout</a></li>
+        <li<?php if($url == "index"){ echo ' class="active"'; }?>>
+            <a href="<?php echo $this->config->config['base_url']; ?>/index.php">Home</a>
+        </li>
+        <li<?php if($url == "search" || $url == "session"){ echo ' class="active"'; }?>>
+            <a href="<?php echo $this->config->config['base_url']; ?>/index.php/search">Sport session</a>
+        </li>
+        <li<?php if($url == "user"){ echo ' class="active"'; }?>>
+            <a href="<?php echo $this->config->config['base_url']; ?>/index.php/user">User</a>
+        </li>
+        <li>
+            <a href="<?php echo $this->config->config['base_url']; ?>/index.php/admin">Admin</a>
+        </li>
     </ul>
 </div>
-
-<br>
-<form action="<?php echo $this->config->config['base_url']; ?>/index.php/news/search" method="post" class="form-inline">
-    <input type="text" name="keyword" id="keyword" class="form-control"/>
-    <input type="submit" name="Search" id="Search" value="Submit" class="btn btn-primary"/>
-</form>
-<br>
