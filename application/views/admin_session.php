@@ -47,7 +47,7 @@
                             <th>Number of Tickets</th>
                             <th>Price</th>
                             <th>Organizer</th>
-                            <th>Tranier</th>
+                            <th>trainer</th>
                             <th></th>
                             </thead>
                             <tbody>
@@ -63,7 +63,7 @@
                                 <td>'.$row->tickets.'</td>
                                 <td>'.$row->price.'</td>
                                 <td>'.$row->organizer_id.'</td>
-                                <td>'.$row->tranier_id.'</td>
+                                <td>'.$row->trainer_id.'</td>
                                 <td>
                                 <a href="./organizer_edit?id='.$row->session_id.'" class="btn btn-info btn-sm" role="button">Edit</a>
                                     <button class="btn btn-primary btn-sm">Event list</button>

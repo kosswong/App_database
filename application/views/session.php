@@ -29,7 +29,7 @@
                             <div class="col-md-3">Format:</div>
                             <div class="col-md-9"><a href="./search?format=<?php echo $row->format; ?>"><?php echo $row->format; ?></a></div>
                             <div class="col-md-3">Level:</div>
-                            <div class="col-md-9"><a href="./search?level_name=<?php echo $row->level_id; ?>"><?php echo $row->level_name; ?></a></div>
+                            <div class="col-md-9"><a href="./search?level=<?php echo $row->level; ?>"><?php echo $row->level_name; ?></a></div>
                             <div class="col-md-3">Date: </div>
                             <div class="col-md-9"><?php echo $row->datetime_from; ?> - <?php echo $row->datetime_to; ?></div>
                         </div>
@@ -46,7 +46,7 @@
                         <div class="text-center">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <h5><a href="./search?district=<?php echo $row->district; ?>"><?php echo $row->district; ?></a><br/>
+                                    <h5><?php echo $row->district; ?><br/>
                                         <small>District</small>
                                     </h5>
                                 </div>

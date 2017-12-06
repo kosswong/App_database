@@ -8,7 +8,7 @@ class session extends CI_Controller
         $this->load->database();
         $id = isset($_GET["id"]) ? $_GET["id"] : 1;
 
-        $sql_string = "SELECT * FROM sessions NATURAL JOIN trainers NATURAL JOIN venues NATURAL JOIN organizers NATURAL JOIN session_levels WHERE session_id=$id";
+        $sql_string = "SELECT * FROM sessions s JOIN trainers t ON t.trainer_id = s.trainer_id JOIN venues v ON s.venue_id = v.venue_id JOIN organizers o ON o.organizer_id = s.organizer_id JOIN session_levels l ON l.level_id = s.level WHERE session_id=$id";
         $sql_query = $this->db->query($sql_string)->row();
         $data["row"] = $sql_query;
 

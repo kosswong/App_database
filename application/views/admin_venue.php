@@ -40,7 +40,6 @@
                             <thead>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>City</th>
                             <th></th>
                             </thead>
                             <tbody>
@@ -49,7 +48,6 @@
                                 echo '<tr>
                                 <td>'.$row->venue_id.'</td>
                                 <td>'.$row->venue_name.'</td>
-                                <td>'.$row->city.'</td>
                                 <td>
                                 <a href="./organizer_edit?id='.$row->venue_id.'" class="btn btn-info btn-sm" role="button">Edit</a>
                                     <button class="btn btn-primary btn-sm">Event list</button>

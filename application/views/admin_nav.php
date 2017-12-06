@@ -13,10 +13,6 @@ $url = basename($_SERVER['PHP_SELF']);
                 <a href="http://localhost/database/index.php/admin/sport"><i class="fa fa-futbol-o" aria-hidden="true"></i>
                     <p>Sport sessions</p></a>
             </li>
-            <li<?php if($url == "user"){ echo ' class="active"'; }?>>
-                <a href="http://localhost/database/index.php/admin/user"><i class="fa fa-users" aria-hidden="true"></i>
-                    <p>Users</p></a>
-            </li>
             <li<?php if($url == "organizer"){ echo ' class="active"'; }?>>
                 <a href="http://localhost/database/index.php/admin/organizer"><i class="fa fa-university" aria-hidden="true"></i>
                     <p>Organizers</p></a>
@@ -32,10 +28,6 @@ $url = basename($_SERVER['PHP_SELF']);
             <li<?php if($url == "booking"){ echo ' class="active"'; }?>>
                 <a href="http://localhost/database/index.php/admin/booking"><i class="fa fa-tags" aria-hidden="true"></i>
                     <p>Booking record</p></a>
-            </li>
-            <li>
-                <a href="http://localhost/database/index.php/admin/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
-                    <p>Logout</p></a>
             </li>
         </ul>
     </div>
