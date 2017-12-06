@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-12-06 14:47:27
+-- 產生時間： 2017-12-06 15:53:31
 -- 伺服器版本: 10.1.28-MariaDB
 -- PHP 版本： 7.1.10
 
@@ -44,20 +44,20 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`booking_id`, `booking_code`, `user_id`, `user_first_name`, `user_last_name`, `user_email`, `user_phone`, `session_id`) VALUES
-(1, '', NULL, 'chan', 'taiman', 'bibbuou@fgsis.cc', '4561562326', 272),
-(2, 'sdgsadgdagdagda', NULL, 'dsgdshb', 'dfsngisdn', 'nfsigfnsi@bsofigsd.cc', '116516565', 355),
-(3, 'dcb7e396f5de156651655445', NULL, 'dfhdf', 'fdhds', 'fdgini@nfgins.cc', '156651655445', 986),
-(4, '74631c6a0461161656165', NULL, 'dfsghgdf', 'dshdsf', 'fdghgdfs@16516gs.cc', '161656165', 601),
-(5, 'b7029b408ab21651665166', NULL, 'dsghsdhf', 'dfhdsh', 'dsfhsdfhd@165gf6s.cc', '1651665166', 602),
-(6, 'e5f93e09025c16515656165165', NULL, 'rfhdsh', 'sdhsdfh', 'dfsfhfdsf@16s51g56s.cc', '16515656165165', 607),
-(7, '0619c569f0ee165165651656', NULL, 'sdgdsg', 'sdgsdg', 'dsgds165@xn--16561-t28i.xn--hn4a', '165165651656', 603),
-(8, 'cfaeac1be8cd21561561566', NULL, 'dhdfsh', 'fsdhfdsh', 'fdshfdshfds@164166.cc', '21561561566', 612),
-(9, '3dab0c2948ff1651561666', NULL, 'fhdhd', 'fdsgfsd', 'dfnnhfdono@ngsfogns.cc', '1651561666', 603),
-(10, 'dfa7eb54a65415616619', NULL, 'gfdhgfdj', 'hfdgjgfd', '165s1dfg65s@165165.cc', '15616619', 604),
-(11, '55ce4ccdf3981651656551', NULL, 'dsfhsdhnq', 'fuognis', 'nfdughnfisd@iofsogs.cc', '1651656551', 612),
-(12, '78f44b2b9f4116516515656', NULL, 'fhsddhfs', 'uinsdgisuo', 'wkl_koss1998@yahoo.com.hk', '16516515656', 612),
-(13, '5cc5cedc5a9746764854854', NULL, 'dfhsdh', 'fdshsd', 'fhdshdsfhfd@1656.cc', '46764854854', 1),
-(14, 'a7ee1630dd9d105615656', NULL, 'fdghsdh', 'dshdsh', 'sdfhfsdh4165@19156.cc', '105615656', 2);
+(1, '', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 272),
+(2, 'sdgsadgdagdagda', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 355),
+(3, 'dcb7e396f5de156651655445', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 986),
+(4, '74631c6a0461161656165', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 601),
+(5, 'b7029b408ab21651665166', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 602),
+(6, 'e5f93e09025c16515656165165', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 607),
+(7, '0619c569f0ee165165651656', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 603),
+(8, 'cfaeac1be8cd21561561566', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 612),
+(9, '3dab0c2948ff1651561666', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 603),
+(10, 'dfa7eb54a65415616619', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 604),
+(11, '55ce4ccdf3981651656551', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 612),
+(12, '78f44b2b9f4116516515656', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 612),
+(13, '5cc5cedc5a9746764854854', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 1),
+(14, 'a7ee1630dd9d105615656', NULL, 'TAIMAN', 'CHAN', 'admin@gmail.com', '98765432', 2);
 
 -- --------------------------------------------------------
 
@@ -3278,30 +3278,6 @@ INSERT INTO `trainers` (`trainer_id`, `trainer_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `users`
---
-
-CREATE TABLE `users` (
-  `user_id` int(11) UNSIGNED NOT NULL,
-  `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_password` char(32) COLLATE utf8_unicode_ci NOT NULL,
-  `user_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `user_identity` int(11) NOT NULL DEFAULT '0',
-  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- 資料表的匯出資料 `users`
---
-
-INSERT INTO `users` (`user_id`, `user_name`, `user_password`, `user_email`, `user_phone`, `user_identity`, `first_name`, `last_name`) VALUES
-(1, 'admin', 'test', 'admin@site.com', '54842626', 0, '', '');
-
--- --------------------------------------------------------
-
---
 -- 資料表結構 `venues`
 --
 
@@ -3373,12 +3349,6 @@ ALTER TABLE `trainers`
   ADD PRIMARY KEY (`trainer_id`);
 
 --
--- 資料表索引 `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
 -- 資料表索引 `venues`
 --
 ALTER TABLE `venues`
@@ -3429,12 +3399,6 @@ ALTER TABLE `session_types`
 --
 ALTER TABLE `trainers`
   MODIFY `trainer_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- 使用資料表 AUTO_INCREMENT `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表 AUTO_INCREMENT `venues`

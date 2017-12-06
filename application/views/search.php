@@ -16,26 +16,24 @@
             </div>
 
             <div class="content">
-                <form action="./search" method="post">
+                <form action="<?php echo $this->config->config['base_url']; ?>/index.php/search" method="get">
                     <input type="hidden" value="601" name="session_id">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>District</label>
-                                <input type="text" name="first_name" class="form-control border-input" placeholder="First Name">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Activity Type</label>
-                                <input type="text" name="last_name" class="form-control border-input" placeholder="Type">
+                                <label>Format</label>
+                                <select class="form-control" name="format">
+                                    <option></option>
+                                    <option>Personal Training</option>
+                                    <option>Group</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Level</label>
                                 <select class="form-control" name="level">
-                                    <option>All</option>
+                                    <option></option>
                                     <option>Let Me Try</option>
                                     <option>Beginner</option>
                                     <option>Intermediate</option>
@@ -43,16 +41,103 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label>Phone</label>
-                                <input type="number" name="phone" class="form-control border-input" placeholder="Phone number">
+                                <label>Type</label>
+                                <select class="form-control" name="type">
+                                    <option></option>
+                                    <option>Other</option>
+                                    <option>Aerobic Dance</option>
+                                    <option>American Pool</option>
+                                    <option>Archery</option>
+                                    <option>Badminton</option>
+                                    <option>Baduanjin</option>
+                                    <option>Basketball</option>
+                                    <option>Beach Volleyball</option>
+                                    <option>Bird Watching</option>
+                                    <option>Body-Mind Stretch</option>
+                                    <option>Briefing on Proper Ways to Use Fitness Equipment</option>
+                                    <option>Canoeing</option>
+                                    <option>Carnival</option>
+                                    <option>Chess</option>
+                                    <option>Children Dance</option>
+                                    <option>Chinese Dance</option>
+                                    <option>Community Garden Programme</option>
+                                    <option>Cricket</option>
+                                    <option>Cycling</option>
+                                    <option>Dance Competition</option>
+                                    <option>Dance Night / Dance Party</option>
+                                    <option>Day Camp / Evening Camp</option>
+                                    <option>Distance Run</option>
+                                    <option>Exercise and Health Seminar</option>
+                                    <option>Exhibition</option>
+                                    <option>Fencing</option>
+                                    <option>Fitness (Multi-gym)</option>
+                                    <option>Fitness Exercise</option>
+                                    <option>Fitness Practice Scheme</option>
+                                    <option>Fitness Walking Briefing Session</option>
+                                    <option>Football</option>
+                                    <option>Fun Games</option>
+                                    <option>Gateball</option>
+                                    <option>Go</option>
+                                    <option>Golf</option>
+                                    <option>Greening Activity</option>
+                                    <option>Gymnastics/Gymnastics for All</option>
+                                    <option>Handball</option>
+                                    <option>Healthy Elderly Scheme</option>
+                                    <option>Hiking</option>
+                                    <option>Horse Riding</option>
+                                    <option>Horticulture</option>
+                                    <option>Hydro Fitness</option>
+                                    <option>Indoor Short Mat Bowling</option>
+                                    <option>Jazz</option>
+                                    <option>Judo</option>
+                                    <option>Land Excursion</option>
+                                    <option>Lawn Bowls</option>
+                                    <option>Mini-soccer</option>
+                                    <option>Mini-tennis</option>
+                                    <option>Miscellaneous Activities</option>
+                                    <option>Modern Dance</option>
+                                    <option>Multi-dance</option>
+                                    <option>Oriental Dance</option>
+                                    <option>Orienteering</option>
+                                    <option>Performance & Demonstration</option>
+                                    <option>Play Leadership Scheme</option>
+                                    <option>Potted Sports</option>
+                                    <option>Residential Camp</option>
+                                    <option>Rope Course</option>
+                                    <option>Rugby</option>
+                                    <option>Sailing</option>
+                                    <option>Shooting</option>
+                                    <option>Snooker</option>
+                                    <option>Social Dance</option>
+                                    <option>Sport Climbing</option>
+                                    <option>Squash</option>
+                                    <option>Stress Management and Physical Relaxation</option>
+                                    <option>Swimming</option>
+                                    <option>Table Tennis</option>
+                                    <option>Tai Chi</option>
+                                    <option>Tai Chi Sword</option>
+                                    <option>Tennis</option>
+                                    <option>Tent Camp</option>
+                                    <option>Track & Field</option>
+                                    <option>Ultimate</option>
+                                    <option>Volleyball</option>
+                                    <option>Western Folk Dance</option>
+                                    <option>Windsurfing</option>
+                                    <option>Wushu</option>
+                                    <option>Yoga</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <input type="text" name="condition" class="form-control border-input"
+                                       placeholder="Enter anything... activity name, etc..">
+                            </div>
                         </div>
                     </div>
                     <div class="text-center">
@@ -60,7 +145,6 @@
                     </div>
                     <div class="clearfix"></div>
                 </form>
-
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -74,14 +158,15 @@
                 if ($current_page == $i) {
                     echo ' class="active"';
                 }
-                echo "><a href='./search?page=" . $i . "'>" . $i . "</a></li>";
+                echo "><a href='./search?page=" . $i . "&condition=" . $condition . "&format=" . $format . "&level=" . $level . "&type=" . $type . "'>" . $i . "</a></li>";
             };
             ?>
             <li><a href="#">&raquo;</a></li>
         </ul>
-        <?php
-        foreach ($query_listing->result() as $row) {
-            echo '
+        <div class="row">
+            <?php
+            foreach ($query_listing->result() as $row) {
+                echo '
                     <div class="col-sm-6 col-md-3">
                         <div class="card hoverable small">
                             <div class="card-image" style="background-image: url(' . $row->photo_url . ') !important;
@@ -96,7 +181,7 @@
                             </div>
                         </div>
                     </div>';
-        }
-        ?>
+            }
+            ?></div>
     </div>
 </div>
