@@ -9,7 +9,7 @@ $url = basename($_SERVER['PHP_SELF']);
 </div>
 <div class="container">
     <ul class="nav nav-pills nav-justified">
-        <li<?php if($url == "index"){ echo ' class="active"'; }?>>
+        <li<?php if($url == "index" || $url == "index.php"){ echo ' class="active"'; }?>>
             <a href="<?php echo $this->config->config['base_url']; ?>/index.php">Home</a>
         </li>
         <li<?php if($url == "search" || $url == "session"){ echo ' class="active"'; }?>>

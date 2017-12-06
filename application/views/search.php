@@ -7,7 +7,7 @@
         </div>
 
         <div class="header">
-            <h4 class="title">Session List</h4>
+            <h4 class="title">Sport Session</h4>
         </div>
 
         <div class="row card">
@@ -55,47 +55,15 @@
                         <div class="col-md-6">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="checkbox">
-                            <input id="checkbox2" type="checkbox" checked="">
-                            <label for="checkbox2">
-                                I agree with everything.
-                            </label>
-                        </div>
-                    </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-info btn-fill btn-wd">Do Booking</button>
+                        <button type="submit" class="btn btn-info btn-fill btn-wd">Search</button>
                     </div>
                     <div class="clearfix"></div>
                 </form>
 
                 <div class="clearfix"></div>
             </div>
-
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="exampleInputName2">地區session title, long description, trainer's names, organizer's
-                        name</label>
-                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">活動種類</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">Level</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">Price/label>
-                        <input type="email" class="form-control" id="exampleInputEmail2"
-                               placeholder="jane.doe@example.com">
-                </div>
-                <button type="submit" class="btn btn-default">Send invitation</button>
-            </form>
         </div>
-
-
 
         <ul class="pagination">
             <li><a href="#">&laquo;</a></li>

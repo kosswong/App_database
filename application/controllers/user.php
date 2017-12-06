@@ -9,7 +9,7 @@ class user extends CI_Controller {
 
         $this->load->view('header', $data);
         $this->load->view('navigation', $data);
-        $this->load->view('login', $data);
+        $this->load->view('booking', $data);
         $this->load->view('footer', $data);
     }
 
@@ -26,7 +26,7 @@ class user extends CI_Controller {
         $login_session = $row['username'];
 
         if(!isset($_SESSION['login_user'])){
-            header("location:login.php");
+            header("location:booking.php");
         }
     }
 
